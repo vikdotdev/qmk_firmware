@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 
-
 #define _MAIN 0
 #define _SIDE 1
 #define _NUM 2
@@ -8,6 +7,7 @@
 #define LC_ESC      LCTL_T(KC_ESC)
 #define LS_LBRC     LSFT_T(KC_LBRC)
 #define LS_TAB      LSFT_T(KC_TAB)
+#define WIN_TAB     LWIN_T(KC_TAB)
 #define LS_BSLS     LSFT_T(KC_BSLASH)
 #define LS_A        LSFT_T(KC_A)
 #define LA_ENT      LALT_T(KC_ENT)
@@ -161,14 +161,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAIN] = LAYOUT_5x6(
-     KC_1,    KC_2, KC_3, KC_4, KC_5, KC_6,                           KC_7, KC_8, KC_9,    KC_0,   KC_MINS, KC_PLUS,
-     KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T,                           KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_BSLS,
-     LC_ESC , KC_A, KC_S, KC_D, KC_F, KC_G,                           KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, LC_QUOT,
-     KC_CAPS, KC_Z, KC_X, KC_C, KC_V, KC_B,                           KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RESET,
-                    KC_EQL,KC_UNDS,                                               RESET, RESET,
-                                      LS_LBRC,                        RS_RBRC,
-                                      SP_SPC , KC_BSPC,      RC_BSPC, TS_ENT,
-                                      LA_ENT , RESET,        KC_RWIN, RESET
+     KC_1   , KC_2  , KC_3  , KC_4  , KC_5  , KC_6,                 KC_7, KC_8, KC_9,    KC_0,   KC_NO,  KC_DEL,
+     WIN_TAB, KC_Q  , KC_W  , KC_E  , KC_R  , KC_T,                 KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_BSLS,
+     LC_ESC , KC_A  , KC_S  , KC_D  , KC_F  , KC_G,                 KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, KC_QUOT,
+     KC_CAPS, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B,                 KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RESET,
+                      KC_NO, KC_GRV,                                           KC_LBRC, KC_RBRC,
+                                      KC_BSPC,                           KC_BSPC,
+                                      SP_SPC , KC_EQL,          KC_MINS,  TS_ENT ,
+                                      LA_ENT , KC_NO,         KC_LCTL, KC_LOCK
   ),
   [_NUM] = LAYOUT_5x6(
      _______,_______,_______,_______,_______,_______,                  _______,_______,_______,_______,_______,_______,

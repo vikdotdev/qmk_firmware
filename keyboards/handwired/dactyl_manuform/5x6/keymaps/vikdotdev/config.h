@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #define USE_SERIAL
+#define AUTO_SHIFT_TIMEOUT 135
 /* #define MASTER_LEFT */
 /* #define SOFT_SERIAL_PIN D3 */
 // #define MASTER_RIGHT

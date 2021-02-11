@@ -1,0 +1,2 @@
+AUTO_SHIFT_ENABLE = yes
+KEY_LOCK_ENABLE = yes
