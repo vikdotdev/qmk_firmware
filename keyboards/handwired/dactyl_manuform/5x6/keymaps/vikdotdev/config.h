@@ -18,9 +18,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-
 #define USE_SERIAL
 #define AUTO_SHIFT_TIMEOUT 135
+#define ONESHOT_TAP_TOGGLE 2  /* Tapping this number of times holds the key until tapped once again. */
+#define ONESHOT_TIMEOUT 10000  /* Time (in ms) before the one shot key is released */
+/* #define DEBUG_MATRIX_SCAN_RATE */
 /* #define MASTER_LEFT */
 /* #define SOFT_SERIAL_PIN D3 */
 // #define MASTER_RIGHT
