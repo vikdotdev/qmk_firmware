@@ -5,27 +5,15 @@
 #define _NUM 2
 #define _FN 3
 #define LC_ESC      LCTL_T(KC_ESC)
-#define LS_LBRC     LSFT_T(KC_LBRC)
-#define LS_TAB      LSFT_T(KC_TAB)
 #define WIN_TAB     LWIN_T(KC_TAB)
-#define LS_BSLS     LSFT_T(KC_BSLASH)
-#define LS_A        LSFT_T(KC_A)
-#define LA_ENT      LALT_T(KC_ENT)
-#define RS_RBRC     RSFT_T(KC_RBRC)
-#define RS_SCLN     RSFT_T(KC_SCLN)
 #define RC_BSPC     RCTL_T(KC_BSPC)
-#define RA_BSPC     LALT_T(KC_BSPC)
-#define TS_SPC      LT(_SIDE, KC_SPC)
 #define TS_ENT      LT(_SIDE, KC_ENT)
-#define TF_TAB      LT(_FN, KC_TAB)
-#define TF_EQL      LT(_FN, KC_EQL)
-#define LC_QUOT     LCTL_T(KC_QUOT)
-#define OSM_LS      OSM(MOD_LSFT)
-#define OSM_LC      OSM(MOD_RCTL)
-#define OSM_LA      OSM(MOD_LALT)
 #define OSL_FN      OSL(_FN)
 #define OSL_NUM     OSL(_NUM)
 #define OSM_WIN     OSM(KC_LWIN)
+#define OSM_LS      OSM(MOD_LSFT)
+#define OSM_LC      OSM(MOD_RCTL)
+#define OSM_LA      OSM(MOD_LALT)
 
 static bool alt_set_by_special_tab = false;
 
@@ -186,7 +174,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     // Manage "interrupt" keys after SP_SPC key is released.
-    if (IS_LAYER_ON(_SIDE)) {
+    if (keycode == SP_SPC && IS_LAYER_ON(_SIDE)) {
         if (record->event.pressed) {
             lt_info.key_presses++;
         } else {
